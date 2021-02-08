@@ -1,16 +1,48 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: "redhut";
+    src: url("../public/fonts/RedHatDisplay-Bold.ttf");
+    font-weight: 700;
+}
+
+:root {
+    /* Primary*/
+
+    --Grayishblue: hsl(237, 18%, 59%);
+    --Softred: hsl(345, 95%, 68%);
+
+    /*Neutral*/
+
+    --White: hsl(0, 0%, 100%);
+    --Darkdesaturatedblue: hsl(236, 21%, 26%);
+    --Verydarkblue: hsl(235, 16%, 14%);
+    --Verydark/*(mostly black) blue*/: hsl(234, 17%, 12%);
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    font-family: "redhut";
+    font-weight: 700;
+    background: url("../public/images/bg-stars.svg"),
+        url("../public/images/pattern-hills.svg") bottom, var(--Verydarkblue);
+    background-repeat: no-repeat;
+    letter-spacing: 0.7rem;
+}
+
+h2 {
+    color: var(--White);
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        background-position: bottom;
+    }
 }

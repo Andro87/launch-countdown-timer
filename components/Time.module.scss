@@ -1,0 +1,114 @@
+.box_timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.timer {
+    position: relative;
+    perspective: 500px;
+
+    overflow: hidden;
+}
+
+.timer::before {
+    border-bottom: 3px solid black;
+    content: "";
+    width: 100%;
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    z-index: 2;
+    opacity: 0.2;
+}
+
+.circle_left {
+    width: 10px;
+    height: 10px;
+    background-color: var(--Verydark);
+    position: absolute;
+    bottom: calc(50% - 5px);
+    left: calc(0% - 5px);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.circle_right {
+    width: 10px;
+    height: 10px;
+    background-color: var(--Verydark);
+    position: absolute;
+    bottom: calc(50% - 5px);
+    border-radius: 50%;
+    z-index: 2;
+    right: calc(0% - 5px);
+}
+
+.half {
+    background-color: var(--Darkdesaturatedblue);
+    color: var(--Softred);
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    backface-visibility: hidden;
+    width: 180px;
+
+    height: 60px;
+    font-size: 6.5rem;
+    transform-origin: bottom center;
+
+    border-radius: 5px;
+    @media screen and (max-width: 685px) {
+        width: 100px;
+        height: 40px;
+        font-size: 4.5rem;
+    }
+}
+
+.half span {
+    display: inline-block;
+}
+
+.bottom span {
+    transform: translateY(-50%);
+}
+
+.date {
+    color: var(--Grayishblue);
+    text-align: center;
+    font-size: clamp(0.5rem, 1vw, 1rem);
+    margin-top: 15px;
+}
+
+.flipper_wrap {
+    position: absolute;
+    top: 0;
+}
+
+.back {
+    transform: rotateX(180deg);
+    transform-origin: top center;
+}
+
+.back span {
+    transform: translateY(-50%);
+    transform-style: preserve-3d;
+}
+.half.flipped {
+    transform: rotateX(180deg);
+    transition: transform 0.3s linear;
+}
+
+.back.flipped {
+    transform: rotateX(0deg);
+}
+
+.border_top {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.border_bottom {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
